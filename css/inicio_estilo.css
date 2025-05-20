@@ -109,6 +109,95 @@ body {
   color: #123456;
 }
 
+#configurador {
+  background-color: #f5f5f5;
+  padding: 4rem 2rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #123456;
+}
+
+.color-selector-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.color-option {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: transform 0.3s, border 0.3s;
+}
+
+.color-option:hover {
+  transform: scale(1.1);
+}
+
+.color-option.selected {
+  border: 3px solid #14058c;
+}
+
+.color-white {
+  background-color: #fff;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+.color-black {
+  background-color: #111;
+}
+
+.color-red {
+  background-color: #c1121f;
+}
+
+.car-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+.form-check-label {
+  font-weight: 500;
+}
+
+.form-check-input:checked {
+  background-color: #123456;
+  border-color: #123456;
+}
+
+#color-name, #color-price {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.boton-rojo {
+  background-color: #e63946;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.boton-rojo:hover {
+  background-color: #c12f3f;
+}
+
 footer {
   background-color: #eee;
   text-align: center;

@@ -1,56 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/inicio_estilo.css">
-    <title>Inicio</title>
+    <script src="js/elegir.js"></script>
+    <script src="js/precio_total.js"></script>
+    <script src="js/delizar_secciones.js"></script>
 </head>
+
 <body>
     <header class="navbar">
         <div class="logo">CACHARRO VIEJO</div>
         <nav>
             <a href="">Inicio</a>
-            <a href="">Nuestro Modelo</a>
-            <a href="">Configurador</a>
+            <a href="#modelo">Nuestro Modelo</a>
+            <a href="#configurador">Configurador</a>
             <a href="">Contacto</a>
         </nav>
     </header>
 
     <section class="encabezado">
-    <h1>DESCUBRE EL FUTURO DE LA CONDUCCIÓN</h1>
-    <p>Presentamos el nuevo modelo de Cacharro Viejo: innovación, estilo y rendimiento en un solo vehículo</p>
-    <a href="#configurador" class="boton-rojo">Configura el tuyo</a>
-  </section>
+        <h1>DESCUBRE EL FUTURO DE LA CONDUCCIÓN</h1>
+        <p>Presentamos el nuevo modelo de Cacharro Viejo: innovación, estilo y rendimiento en un solo vehículo</p>
+        <a href="#configurador" class="boton-rojo">Configura el tuyo</a>
+    </section>
 
-  <section class="modelo">
-    <h2>Nuestro Revolucionario Modelo</h2>
-    <div class="linea-roja"></div>
-    <div class="contenido-modelo">
-      <img src="imagenes/portada.jpg" alt="Automóvil Cacharro Viejo" height="300" width="1200">
-      <div class="detalles">
-        <h3>El automóvil que redefine la experiencia de conducción</h3>
-        <p>Este modelo combina tecnología de punta, confort y un diseño impresionante que no pasará desapercibido.</p>
-        <ul class="caracteristicas">
-          <li><i class="fas fa-shield-alt"></i> <strong>5 años</strong> de garantía</li>
-          <li><i class="fas fa-users"></i> <strong>5 pasajeros</strong></li>
-          <li><i class="fas fa-gas-pump"></i> <strong>18 km/l</strong> en ciudad</li>
-          <li><i class="fas fa-cogs"></i> Motor <strong>2.0L Turbo</strong></li>
-          <li><i class="fas fa-bolt"></i> <strong>180 HP</strong> de potencia</li>
-          <li><i class="fas fa-globe"></i> Origen: <strong>Japonés</strong></li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <section class="modelo" id="modelo">
+        <h2>Nuestro Revolucionario Modelo</h2>
+        <div class="linea-roja"></div>
+        <div class="contenido-modelo">
+            <img src="imagenes/portada.jpg" alt="Automóvil Cacharro Viejo" width="1200" height="300">
+            <div class="detalles">
+                <h3>El automóvil que redefine la experiencia de conducción</h3>
+                <p>Este modelo combina tecnología de punta, confort y un diseño impresionante que no pasará
+                    desapercibido.</p>
+                <ul class="caracteristicas">
+                    <li><i class="fas fa-shield-alt"></i> <strong>5 años</strong> de garantía</li>
+                    <li><i class="fas fa-users"></i> <strong>5 pasajeros</strong></li>
+                    <li><i class="fas fa-gas-pump"></i> <strong>18 km/l</strong> en ciudad</li>
+                    <li><i class="fas fa-cogs"></i> Motor <strong>2.0L Turbo</strong></li>
+                    <li><i class="fas fa-bolt"></i> <strong>180 HP</strong> de potencia</li>
+                    <li><i class="fas fa-globe"></i> Origen: <strong>Japonés</strong></li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <p>Síguenos en:
-      <a href="#">Facebook</a> |
-      <a href="#">Instagram</a> |
-      <a href="#">TikTok</a>
-    </p>
-    <p>2025 Desarrollado por Matias Garcia. Todos los derechos reservados.</p>
-  </footer>
+    <section class="py-5 bg-light" id="configurador">
+        <div class="container">
+            <h2 class="section-title text-center">Configura Tu Automóvil</h2>
+            <form class="needs-validation" id="car-configurator" novalidate>
+                <div class="row justify-content-center mb-5">
+                    <div class="col-md-8 text-center">
+                        <h4 class="mb-4">Elige el color de tu vehículo</h4>
+                        <p class="mb-4">El automóvil base en color blanco tiene un valor de $3.500.000. Los otros
+                            colores tienen un costo adicional.</p>
+                        <div class="color-selector-container">
+                            <div class="color-option color-white selected" data-color="white" data-price="0"></div>
+                            <div class="color-option color-black" data-color="black" data-price="800000"></div>
+                            <div class="color-option color-red" data-color="red" data-price="400000"></div>
+                        </div>
+                        <div class="mt-3">
+                            <p class="fw-bold" id="color-name">Color: Blanco</p>
+                            <p id="color-price">Costo adicional: $0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center mb-5">
+                    <div class="col-md-10">
+                        <div class="row align-items-start">
+                            <div class="col-md-6 text-center mb-4 mb-md-0">
+                                <img src="imagenes/blanco.jpg" id="color-preview" class="car-image"
+                                    alt="Automóvil color blanco" width="470">
+                            </div>
+
+                            <div class="col-md-6">
+                                <h4 class="text-center mb-4">Selecciona los adicionales</h4>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="neblineros"
+                                                name="adicionales" value="80000">
+                                            <label class="form-check-label d-flex justify-content-between"
+                                                for="neblineros">
+                                                <span>Neblineros</span><span>$80.000</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="portaequipaje"
+                                                name="adicionales" value="350000">
+                                            <label class="form-check-label d-flex justify-content-between"
+                                                for="portaequipaje">
+                                                <span>Portaequipaje</span><span>$350.000</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="cinturones"
+                                                name="adicionales" value="50000">
+                                            <label class="form-check-label d-flex justify-content-between"
+                                                for="cinturones">
+                                                <span>Cinturones y arnés para mascotas</span><span>$50.000</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="lucesled"
+                                                name="adicionales" value="70000">
+                                            <label class="form-check-label d-flex justify-content-between"
+                                                for="lucesled">
+                                                <span>Luces LED</span><span>$70.000</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="camaratrasera"
+                                                name="adicionales" value="100000">
+                                            <label class="form-check-label d-flex justify-content-between"
+                                                for="camaratrasera">
+                                                <span>Cámara trasera</span><span>$100.000</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>Síguenos en:
+            <a href="https://www.infobae.com/resizer/v2/J5NMFGGUFFGPZPA3HRFAXTJUQA.jpg?auth=0ff5c134b88d8bb80b65b3189e12e6e2f605dea873864a0a8b1d85af396764f0&smart=true&width=350&height=233&quality=85">Facebook</a> |
+            <a href="https://www.instagram.com/mvtiu_/">Instagram</a> |
+            <a href="#">TikTok</a>
+        </p>
+        <p>2025 Desarrollado por Matias Garcia. Todos los derechos reservados.</p>
+    </footer>
 </body>
+
 </html>
