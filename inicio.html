@@ -10,16 +10,26 @@
     <script src="js/elegir.js"></script>
     <script src="js/precio_total.js"></script>
     <script src="js/delizar_secciones.js"></script>
-</head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inicio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="css/inicio_estilo.css">
+        <script src="js/elegir.js"></script>
+        <script src="js/precio_total.js"></script>
+        <script src="js/smooth-scroll.js"></script>
+    </head>
 
 <body>
     <header class="navbar">
         <div class="logo">CACHARRO VIEJO</div>
         <nav>
-            <a href="">Inicio</a>
+            <a href="#inicio">Inicio</a>
             <a href="#modelo">Nuestro Modelo</a>
             <a href="#configurador">Configurador</a>
-            <a href="">Contacto</a>
+            <a href="#contacto">Contacto</a>
         </nav>
     </header>
 
@@ -50,94 +60,125 @@
         </div>
     </section>
 
-    <section class="py-5 bg-light" id="configurador">
-        <div class="container">
-            <h2 class="section-title text-center">Configura Tu Automóvil</h2>
-            <form class="needs-validation" id="car-configurator" novalidate>
-                <div class="row justify-content-center mb-5">
-                    <div class="col-md-8 text-center">
-                        <h4 class="mb-4">Elige el color de tu vehículo</h4>
-                        <p class="mb-4">El automóvil base en color blanco tiene un valor de $3.500.000. Los otros
-                            colores tienen un costo adicional.</p>
-                        <div class="color-selector-container">
-                            <div class="color-option color-white selected" data-color="white" data-price="0"></div>
-                            <div class="color-option color-black" data-color="black" data-price="800000"></div>
-                            <div class="color-option color-red" data-color="red" data-price="400000"></div>
-                        </div>
-                        <div class="mt-3">
-                            <p class="fw-bold" id="color-name">Color: Blanco</p>
-                            <p id="color-price">Costo adicional: $0</p>
+    <section id="configurador">
+        <div class="configurador-container">
+            <h2 class="section-title">Configura Tu Automóvil</h2>
+            <div class="color-selection-area">
+                <h3 class="selection-subtitle">Elige el color de tu vehículo</h3>
+                <p class="color-info">El automóvil base en color blanco tiene un valor de $3.500.000. Los otros colores
+                    tienen un costo adicional.</p>
+
+                <div class="color-selector-container">
+                    <div class="color-option color-white selected" data-color="white" data-price="0" data-name="Blanco">
+                    </div>
+                    <div class="color-option color-black" data-color="black" data-price="800000" data-name="Negro">
+                    </div>
+                    <div class="color-option color-red" data-color="red" data-price="400000" data-name="Rojo"></div>
+                </div>
+
+                <div class="color-details">
+                    <p class="color-name" id="color-name">Color: Blanco</p>
+                    <p class="color-price" id="color-price">Costo adicional: $0</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="car-preview">
+                        <div class="car-image-container">
+                            <img src="imagenes/blanco.jpg" id="color-preview" class="car-image"
+                                alt="Automóvil color blanco">
                         </div>
                     </div>
                 </div>
 
-                <div class="row justify-content-center mb-5">
-                    <div class="col-md-10">
-                        <div class="row align-items-start">
-                            <div class="col-md-6 text-center mb-4 mb-md-0">
-                                <img src="imagenes/blanco.jpg" id="color-preview" class="car-image"
-                                    alt="Automóvil color blanco" width="470">
-                            </div>
+                <div class="col-lg-6">
+                    <div class="adicionales-area">
+                        <h3 class="adicionales-title">Selecciona los adicionales</h3>
 
-                            <div class="col-md-6">
-                                <h4 class="text-center mb-4">Selecciona los adicionales</h4>
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="form-check mb-3">
-                                            <input class="form-check-input" type="checkbox" id="neblineros"
-                                                name="adicionales" value="80000">
-                                            <label class="form-check-label d-flex justify-content-between"
-                                                for="neblineros">
-                                                <span>Neblineros</span><span>$80.000</span>
-                                            </label>
-                                        </div>
-                                        <div class="form-check mb-3">
-                                            <input class="form-check-input" type="checkbox" id="portaequipaje"
-                                                name="adicionales" value="350000">
-                                            <label class="form-check-label d-flex justify-content-between"
-                                                for="portaequipaje">
-                                                <span>Portaequipaje</span><span>$350.000</span>
-                                            </label>
-                                        </div>
-                                        <div class="form-check mb-3">
-                                            <input class="form-check-input" type="checkbox" id="cinturones"
-                                                name="adicionales" value="50000">
-                                            <label class="form-check-label d-flex justify-content-between"
-                                                for="cinturones">
-                                                <span>Cinturones y arnés para mascotas</span><span>$50.000</span>
-                                            </label>
-                                        </div>
-                                        <div class="form-check mb-3">
-                                            <input class="form-check-input" type="checkbox" id="lucesled"
-                                                name="adicionales" value="70000">
-                                            <label class="form-check-label d-flex justify-content-between"
-                                                for="lucesled">
-                                                <span>Luces LED</span><span>$70.000</span>
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="camaratrasera"
-                                                name="adicionales" value="100000">
-                                            <label class="form-check-label d-flex justify-content-between"
-                                                for="camaratrasera">
-                                                <span>Cámara trasera</span><span>$100.000</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <ul class="adicionales-list">
+                            <li class="adicional-item">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" id="neblineros" name="adicionales" value="80000">
+                                    <span class="checkmark"></span>
+                                    <span class="adicional-nombre">Neblineros</span>
+                                    <span class="adicional-precio">$80.000</span>
+                                </label>
+                            </li>
+
+                            <li class="adicional-item">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" id="portaequipaje" name="adicionales" value="350000">
+                                    <span class="checkmark"></span>
+                                    <span class="adicional-nombre">Portaequipaje</span>
+                                    <span class="adicional-precio">$350.000</span>
+                                </label>
+                            </li>
+
+                            <li class="adicional-item">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" id="cinturones" name="adicionales" value="50000">
+                                    <span class="checkmark"></span>
+                                    <span class="adicional-nombre">Cinturones y arnés para mascotas</span>
+                                    <span class="adicional-precio">$50.000</span>
+                                </label>
+                            </li>
+
+                            <li class="adicional-item">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" id="lucesled" name="adicionales" value="70000">
+                                    <span class="checkmark"></span>
+                                    <span class="adicional-nombre">Luces LED</span>
+                                    <span class="adicional-precio">$70.000</span>
+                                </label>
+                            </li>
+
+                            <li class="adicional-item">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" id="camaratrasera" name="adicionales" value="100000">
+                                    <span class="checkmark"></span>
+                                    <span class="adicional-nombre">Cámara trasera</span>
+                                    <span class="adicional-precio">$100.000</span>
+                                </label>
+                            </li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+
+            <div class="resumen-area">
+                <h3 class="selection-subtitle">Resumen de tu configuración</h3>
+                <div class="precio-total" id="precio-total">Precio Total: <span>$3.500.000</span></div>
+                <a href="#" class="boton-finalizar">Finalizar Compra</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="seccion-contacto">
+        <h2 class="section-title">Contacto</h2>
+        <div class="linea-roja"></div>
+        <p class="contacto-descripcion">¿Tienes preguntas o deseas más información? ¡Estamos para ayudarte!</p>
+        <div class="formulario-contacto">
+            <form action="mailto:ejemplo@cacharroviejo.com" method="post" enctype="text/plain">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí"
+                    required></textarea>
+
+                <button type="submit" class="boton-finalizar">Enviar Mensaje</button>
             </form>
         </div>
     </section>
 
     <footer>
         <p>Síguenos en:
-            <a href="https://www.infobae.com/resizer/v2/J5NMFGGUFFGPZPA3HRFAXTJUQA.jpg?auth=0ff5c134b88d8bb80b65b3189e12e6e2f605dea873864a0a8b1d85af396764f0&smart=true&width=350&height=233&quality=85">Facebook</a> |
-            <a href="https://www.instagram.com/mvtiu_/">Instagram</a> |
-            <a href="#">TikTok</a>
+            <a href="">Facebook</a> |
+            <a href="">Instagram</a> |
         </p>
         <p>2025 Desarrollado por Matias Garcia. Todos los derechos reservados.</p>
     </footer>

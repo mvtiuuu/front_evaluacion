@@ -2,7 +2,8 @@ body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f8f8;
+  background-color:
+    #f8f8f8;
   color: #333;
 }
 
@@ -10,7 +11,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #123456;
+  background-color:
+    #123456;
   padding: 1rem 2rem;
   color: white;
 }
@@ -44,7 +46,8 @@ body {
 }
 
 .boton-rojo {
-  background-color: #e63946;
+  background-color:
+    #e63946;
   color: white;
   padding: 0.75rem 1.5rem;
   text-decoration: none;
@@ -59,7 +62,8 @@ body {
 }
 
 .modelo h2 {
-  color: #123456;
+  color:
+    #123456;
   margin-bottom: 0.5rem;
 }
 
@@ -82,7 +86,7 @@ body {
 .contenido-modelo img {
   max-width: 400px;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .detalles {
@@ -106,46 +110,118 @@ body {
 
 .caracteristicas i {
   margin-right: 0.5rem;
-  color: #123456;
+  color:
+    #123456;
 }
 
 #configurador {
-  background-color: #f5f5f5;
-  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+  padding: 5rem 0;
+  position: relative;
+}
+
+#configurador::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f8f9fa 25%, #eef0f2 25%, #eef0f2 50%, #f8f9fa 50%, #f8f9fa 75%, #eef0f2 75%);
+  background-size: 60px 60px;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.configurador-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .section-title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
   color: #123456;
+  position: relative;
+}
+
+.section-title:after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #e63946;
+  margin: 0.8rem auto 0;
+}
+
+.color-selection-area {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.selection-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #123456;
+}
+
+.color-info {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #555;
 }
 
 .color-selector-container {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  margin: 2rem 0;
 }
 
 .color-option {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  border: 3px solid transparent;
+  border: 4px solid transparent;
   cursor: pointer;
-  transition: transform 0.3s, border 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .color-option:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .color-option.selected {
-  border: 3px solid #14058c;
+  border: 4px solid #123456;
+}
+
+.color-option.selected::after {
+  content: '\f00c';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #123456;
+  font-size: 1.1rem;
 }
 
 .color-white {
   background-color: #fff;
-  box-shadow: 0 0 4px rgba(0,0,0,0.1);
 }
 
 .color-black {
@@ -156,11 +232,12 @@ body {
   background-color: #c1121f;
 }
 
-.car-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.color-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .card {
@@ -169,33 +246,145 @@ body {
   box-shadow: 0 0 15px rgba(0,0,0,0.05);
 }
 
-.form-check-label {
+.color-price {
+  font-size: 1.2rem;
+  color: #e63946;
   font-weight: 500;
 }
 
-.form-check-input:checked {
-  background-color: #123456;
-  border-color: #123456;
+.car-preview {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
+  text-align: center;
+  padding: 2rem;
 }
 
-#color-name, #color-price {
-  font-size: 1.1rem;
-  color: #333;
+.car-image-container {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.car-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.car-image:hover {
+  transform: scale(1.02);
+}
+
+.adicionales-area {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+}
+
+.adicionales-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #123456;
+}
+
+.adicionales-list {
+  padding: 0;
+  list-style: none;
+}
+
+.adicional-item {
+  border-bottom: 1px solid #eee;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.adicional-item:last-child {
+  border-bottom: none;
+}
+
+.adicional-item:hover {
+  background-color: #f8f9fa;
+}
+
+.custom-checkbox {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 500;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: #eee;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.custom-checkbox:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+.custom-checkbox input:checked~.checkmark {
+  background-color: #123456;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
 }
 
 .boton-rojo {
   background-color: #e63946;
   color: white;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
+  padding: 1rem 2rem;
   border: none;
-  transition: background-color 0.3s;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.boton-rojo:hover {
+.boton-finalizar:hover {
   background-color: #c12f3f;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
 }
 
 footer {

@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }).format(price);
 
             colorPriceElement.textContent = `Costo adicional: ${formattedPrice}`;
-
             colorOptions.forEach(opt => opt.classList.remove('selected'));
             this.classList.add('selected');
         });
