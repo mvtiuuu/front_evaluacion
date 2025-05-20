@@ -1,46 +1,38 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
+    const precioBase = 3500000; // Precio base del automóvil en blanco
+    const colorOptions = document.querySelectorAll('.color-option');
     const adicionales = document.querySelectorAll('input[name="adicionales"]');
-    const basePrice = 3500000; 
-    let totalPrice = basePrice;
-    let colorPrice = 0;
 
     function actualizarPrecioTotal() {
-        totalPrice = basePrice + colorPrice;
-
-        adicionales.forEach(function (adicional) {
+        let precioTotal = precioBase;
+        
+        const colorSeleccionado = document.querySelector('.color-option.selected');
+        if (colorSeleccionado) {
+            precioTotal += parseInt(colorSeleccionado.getAttribute('data-price') || 0);
+        }
+        
+        adicionales.forEach(adicional => {
             if (adicional.checked) {
-                totalPrice += parseInt(adicional.value);
+                precioTotal += parseInt(adicional.value || 0);
             }
         });
 
-        let precioTotalElement = document.getElementById('precio-total');
-        if (!precioTotalElement) {
-            precioTotalElement = document.createElement('div');
-            precioTotalElement.id = 'precio-total';
-            precioTotalElement.className = 'text-center mt-4 h3';
-            document.getElementById('car-configurator').appendChild(precioTotalElement);
-        }
-
-        const formattedPrice = new Intl.NumberFormat('es-CL', {
+        const precioFormateado = new Intl.NumberFormat('es-CL', {
             style: 'currency',
             currency: 'CLP',
             minimumFractionDigits: 0
-        }).format(totalPrice);
-
-        precioTotalElement.textContent = `Precio Total: ${formattedPrice}`;
+        }).format(precioTotal).replace('CLP', '$');
+        
+        document.getElementById('precio-total').innerHTML = `Precio Total: <span>${precioFormateado}</span>`;
     }
-
-    const colorOptions = document.querySelectorAll('.color-option');
+    
     colorOptions.forEach(option => {
-        option.addEventListener('click', function () {
-            colorPrice = parseInt(this.getAttribute('data-price'));
-            actualizarPrecioTotal();
-        });
+        option.addEventListener('click', actualizarPrecioTotal);
     });
-
-    adicionales.forEach(function (adicional) {
+    
+    adicionales.forEach(adicional => {
         adicional.addEventListener('change', actualizarPrecioTotal);
     });
-
+    
     actualizarPrecioTotal();
 });

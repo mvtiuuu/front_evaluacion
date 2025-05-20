@@ -1,0 +1,44 @@
+    .boleta {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 30px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      background: #f9f9f9;
+    }
+
+    .boleta h2 {
+      text-align: center;
+      color: #d32f2f;
+    }
+
+    .boleta ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .boleta ul li {
+      margin: 10px 0;
+    }
+
+    .resumen-total {
+      font-weight: bold;
+      font-size: 1.2em;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .boton-volver {
+      background-color: #af4c4c;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .boton-volver:hover {
+      background-color: #8f0b16;
+    }

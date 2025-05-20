@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 style: 'currency',
                 currency: 'CLP',
                 minimumFractionDigits: 0
-            }).format(price);
+            }).format(price).replace('CLP', '$');
 
             colorPriceElement.textContent = `Costo adicional: ${formattedPrice}`;
             colorOptions.forEach(opt => opt.classList.remove('selected'));
